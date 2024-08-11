@@ -1,4 +1,4 @@
-import "./App.css";
+import './App.css'
 
 function App(props) {
   return (
@@ -8,7 +8,7 @@ function App(props) {
         {props.firstname} {props.lastname}, I hope you've had a nice day
       </p>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
