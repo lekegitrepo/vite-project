@@ -26,6 +26,10 @@ function TodoGrid() {
     setTodo({ description: '', date: '', status: '' })
   }
 
+  const removeAllTodo = () => {
+    setTodos([])
+  }
+
   return (
     <>
       <input
@@ -46,13 +50,22 @@ function TodoGrid() {
         value={todo.status}
         onChange={inputChanged}
       />
-      <ReactiveButton
-        idleText="Add"
-        size="large"
-        rounded
-        onClick={addTodo}
-        style={{ marginLeft: '5px' }}
-      />
+      <div>
+        <ReactiveButton
+          idleText="Add"
+          size="large"
+          rounded
+          onClick={addTodo}
+          style={{ marginLeft: '5px' }}
+        />
+        <ReactiveButton
+          idleText="Clear All"
+          size="large"
+          rounded
+          onClick={removeAllTodo}
+          style={{ marginLeft: '5px' }}
+        />
+      </div>
       <div className="ag-theme-material" style={{ height: 400, width: 600 }}>
         <AgGridReact rowData={todos} columnDefs={columnDefs} />
       </div>
